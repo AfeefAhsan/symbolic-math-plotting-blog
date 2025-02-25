@@ -34,6 +34,16 @@
             height: auto;
             margin: 10px 0;
         }
+        ul {
+            padding-left: 20px;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -42,45 +52,59 @@
         
         <h2>Introduction</h2>
         <h3>What is a Symbolic Mathematics Plotting Library?</h3>
-        <p>A symbolic mathematics plotting library is a powerful tool that enables users to visualize mathematical expressions, functions, and equations symbolically. Unlike numerical plotting tools, these libraries operate on symbolic representations, allowing exact computations and visually intuitive graphing of mathematical expressions.</p>
+        <p>A symbolic mathematics plotting library is a powerful tool that enables users to visualize mathematical expressions, functions, and equations symbolically. Unlike numerical plotting tools, these libraries operate on symbolic representations, allowing exact computations and visually intuitive graphing of mathematical expressions. Such libraries are widely used in computer algebra systems and scientific computing.</p>
 
         <h3>Why Use a Symbolic Mathematics Plotting Library?</h3>
         <ul>
-            <li>Symbolic Representation: Unlike numerical approximations, these libraries allow exact computations.</li>
-            <li>Support for Multiple Plot Types: Includes 2D and 3D graphs, contour plots, parametric plots, and implicit function plots.</li>
-            <li>Integration with Computer Algebra Systems: Works well with libraries like SymPy, Mathematica, and SageMath.</li>
-            <li>Customizability: Users can modify labels, colors, legends, and other graphical elements.</li>
-            <li>Cross-Platform Compatibility: Available on Windows, macOS, and Linux.</li>
-            <li>Mathematical Expression Parsing: Supports direct plotting from symbolic equations without numerical evaluations.</li>
+            <li><strong>Symbolic Representation:</strong> Unlike numerical approximations, these libraries allow exact computations.</li>
+            <li><strong>Support for Multiple Plot Types:</strong> Includes 2D and 3D graphs, contour plots, parametric plots, and implicit function plots.</li>
+            <li><strong>Integration with Computer Algebra Systems:</strong> Works well with libraries like SymPy, Mathematica, and SageMath.</li>
+            <li><strong>Customizability:</strong> Users can modify labels, colors, legends, and other graphical elements.</li>
+            <li><strong>Cross-Platform Compatibility:</strong> Available on Windows, macOS, and Linux.</li>
+            <li><strong>Mathematical Expression Parsing:</strong> Supports direct plotting from symbolic equations without numerical evaluations.</li>
         </ul>
 
         <h2>Who Uses a Symbolic Mathematics Plotting Library?</h2>
         <ul>
-            <li>Mathematicians & Researchers: For visualizing complex functions and symbolic equations.</li>
-            <li>Students & Educators: Useful for teaching calculus, algebra, and differential equations.</li>
-            <li>Scientists & Engineers: Helps in modeling physical systems symbolically.</li>
-            <li>Data Analysts: For analytical visualization of functional relationships.</li>
+            <li><strong>Mathematicians & Researchers:</strong> For visualizing complex functions and symbolic equations.</li>
+            <li><strong>Students & Educators:</strong> Useful for teaching calculus, algebra, and differential equations.</li>
+            <li><strong>Scientists & Engineers:</strong> Helps in modeling physical systems symbolically.</li>
+            <li><strong>Data Analysts:</strong> For analytical visualization of functional relationships.</li>
         </ul>
 
         <h2>Installation & Setup</h2>
         <h3>Windows & macOS</h3>
-        <pre>pip install sympy</pre>
-        
+        <ol>
+            <li>Install Python (if not installed) from <a href="https://www.python.org/">https://www.python.org/</a>.</li>
+            <li>Install SymPy using pip:
+                <pre>pip install sympy</pre>
+            </li>
+            <li>Verify installation by running:
+                <pre>python -c "import sympy; print(sympy.__version__)"</pre>
+            </li>
+        </ol>
+
         <h3>Linux</h3>
-        <pre>
-sudo apt update && sudo apt install python3-sympy
-sudo dnf install python3-sympy
-sudo pacman -S python-sympy
-        </pre>
+        <ul>
+            <li><strong>Ubuntu/Debian:</strong>
+                <pre>sudo apt update && sudo apt install python3-sympy</pre>
+            </li>
+            <li><strong>Fedora:</strong>
+                <pre>sudo dnf install python3-sympy</pre>
+            </li>
+            <li><strong>Arch Linux:</strong>
+                <pre>sudo pacman -S python-sympy</pre>
+            </li>
+        </ul>
 
         <h2>Key Features</h2>
         <ul>
-            <li>Symbolic Function Plotting</li>
-            <li>2D & 3D Graphs</li>
-            <li>Implicit Plotting</li>
-            <li>Latex Rendering</li>
-            <li>Interactive Graphing</li>
-            <li>Integration with Jupyter Notebooks</li>
+            <li><strong>Symbolic Representation:</strong> Unlike numerical approximations, these libraries allow exact computations.</li>
+            <li><strong>Support for Multiple Plot Types:</strong> Includes 2D and 3D graphs, contour plots, parametric plots, and implicit function plots.</li>
+            <li><strong>Integration with Computer Algebra Systems:</strong> Works well with libraries like SymPy, Mathematica, and SageMath.</li>
+            <li><strong>Customizability:</strong> Users can modify labels, colors, legends, and other graphical elements.</li>
+            <li><strong>Cross-Platform Compatibility:</strong> Available on Windows, macOS, and Linux.</li>
+            <li><strong>Mathematical Expression Parsing:</strong> Supports direct plotting from symbolic equations without numerical evaluations.</li>
         </ul>
 
         <h2>Code Examples</h2>
@@ -88,43 +112,44 @@ sudo pacman -S python-sympy
         <pre>
 from sympy import symbols, sin, cos
 from sympy.plotting import plot
+
 x = symbols('x')
-plot(sin(x), cos(x), (x, -10, 10), show=True, legend=True)
+p = plot(sin(x), cos(x), (x, -10, 10), show=True, legend=True)
         </pre>
-        <img src="Screenshot 2025-02-25 170033.png" alt="Basic 2D Plot">
+        <img src="media/image1.png" alt="Basic 2D Plot">
 
         <h3>Implicit Function Plot</h3>
         <pre>
 from sympy import Eq
 from sympy.plotting import plot_implicit
+
 x, y = symbols('x y')
-expr = Eq(x**2 + y**2, 4)
+expr = Eq(x**2 + y**2, 4)  # Circle equation
 plot_implicit(expr)
         </pre>
-        <img src="Screenshot 2025-02-25 170301.png" alt="Implicit Function Plot">
+        <img src="media/image2.png" alt="Implicit Function Plot">
 
         <h3>3D Surface Plot</h3>
         <pre>
 from sympy.plotting import plot3d
-from sympy import symbols, sin, cos
-x, y = symbols('x y')
+
 plot3d(sin(x) * cos(y), (x, -5, 5), (y, -5, 5))
         </pre>
-        <img src="Screenshot 2025-02-25 170418.png" alt="3D Surface Plot">
+        <img src="media/image3.png" alt="3D Surface Plot">
 
         <h2>Use Cases</h2>
         <ul>
-            <li>Educational Use</li>
-            <li>Engineering & Physics</li>
-            <li>Data Science & Machine Learning</li>
-            <li>Optimization Problems</li>
-            <li>Cryptography & Number Theory</li>
-            <li>System Performance Analysis</li>
-            <li>Financial Modeling</li>
+            <li><strong>Educational Use:</strong> Visualizing symbolic algebra and calculus concepts.</li>
+            <li><strong>Engineering & Physics:</strong> Analyzing mathematical models with symbolic representations.</li>
+            <li><strong>Data Science & Machine Learning:</strong> Representing symbolic functions in analytical model explanations.</li>
+            <li><strong>Optimization Problems:</strong> Solving and visualizing constraints in symbolic optimization.</li>
+            <li><strong>Cryptography & Number Theory:</strong> Graphing functions in modular arithmetic and prime number analysis.</li>
+            <li><strong>System Performance Analysis:</strong> Analyzing equations related to performance metrics in computing.</li>
+            <li><strong>Financial Modeling:</strong> Visualizing symbolic functions in financial trend analysis.</li>
         </ul>
 
         <h2>Conclusion</h2>
-        <p>Symbolic mathematics plotting libraries are invaluable for both theoretical and applied sciences...</p>
+        <p>Symbolic mathematics plotting libraries are invaluable for both theoretical and applied sciences. They offer exact mathematical visualizations, making them an essential tool for researchers, educators, and engineers. By leveraging Python's SymPy module, users can seamlessly integrate symbolic plotting into their workflows for accurate and efficient graphing.</p>
 
         <h2>References & Further Reading</h2>
         <ul>
