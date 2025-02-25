@@ -9,7 +9,7 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 0;
+            padding: 20px;
             background-color: #f9f9f9;
             color: #333;
             line-height: 1.6;
@@ -17,7 +17,7 @@
 
         .container {
             max-width: 900px;
-            margin: 20px auto;
+            margin: auto;
             background: white;
             padding: 30px;
             border-radius: 12px;
@@ -90,6 +90,33 @@
             text-decoration: underline;
         }
 
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .author-info {
+            margin-top: 30px;
+            font-style: italic;
+            color: #777;
+            text-align: center;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             h1 {
@@ -113,7 +140,41 @@
 <body>
     <div class="container">
         <h1>Symbolic Mathematics Plotting Library: A Comprehensive Guide</h1>
-        
+
+        <!-- Author and Publication Info -->
+        <div class="author-info">
+            <p><strong>AUTHOR:</strong> Your Name</p>
+            <p><strong>PUBLISHED:</strong> October 2023</p>
+        </div>
+
+        <!-- Table for Key Information -->
+        <table>
+            <thead>
+                <tr>
+                    <th>INFO</th>
+                    <th>CODE</th>
+                    <th>ANALYSIS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Symbolic plotting allows exact computations and visualizations of mathematical expressions.</td>
+                    <td><pre>plot(sin(x), cos(x), (x, -10, 10))</pre></td>
+                    <td>Useful for educational and research purposes.</td>
+                </tr>
+                <tr>
+                    <td>Supports 2D, 3D, contour, and implicit plots.</td>
+                    <td><pre>plot_implicit(Eq(x**2 + y**2, 4))</pre></td>
+                    <td>Ideal for visualizing complex equations.</td>
+                </tr>
+                <tr>
+                    <td>Cross-platform compatibility with Python's SymPy.</td>
+                    <td><pre>pip install sympy</pre></td>
+                    <td>Easy to install and use on Windows, macOS, and Linux.</td>
+                </tr>
+            </tbody>
+        </table>
+
         <h2>Introduction</h2>
         <h3>What is a Symbolic Mathematics Plotting Library?</h3>
         <p>A symbolic mathematics plotting library is a powerful tool that enables users to visualize mathematical expressions, functions, and equations symbolically. Unlike numerical plotting tools, these libraries operate on symbolic representations, allowing exact computations and visually intuitive graphing of mathematical expressions. Such libraries are widely used in computer algebra systems and scientific computing.</p>
