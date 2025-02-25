@@ -28,6 +28,12 @@
             border-radius: 5px;
             overflow-x: auto;
         }
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
     </style>
 </head>
 <body>
@@ -81,6 +87,7 @@ from sympy.plotting import plot
 x = symbols('x')
 plot(sin(x), cos(x))
         </pre>
+        <img src="Screenshot 2025-02-25 170033.png" alt="Basic 2D Plot">
 
         <h3>Implicit Function Plot</h3>
         <pre>
@@ -90,6 +97,7 @@ x, y = symbols('x y')
 expr = Eq(x**2 + y**2, 4)
 plot_implicit(expr)
         </pre>
+        <img src="Screenshot 2025-02-25 170301.png" alt="Implicit Function Plot">
 
         <h3>3D Surface Plot</h3>
         <pre>
@@ -98,6 +106,7 @@ from sympy import symbols, sin, cos
 x, y = symbols('x y')
 plot3d(sin(x) * cos(y), (x, -5, 5), (y, -5, 5))
         </pre>
+        <img src="Screenshot 2025-02-25 170418.png" alt="3D Surface Plot">
 
         <h2>Use Cases</h2>
         <ul>
