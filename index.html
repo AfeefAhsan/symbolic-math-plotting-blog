@@ -67,7 +67,11 @@
         <pre>pip install sympy</pre>
         
         <h3>Linux</h3>
-        <pre>sudo apt update && sudo apt install python3-sympy</pre>
+        <pre>
+sudo apt update && sudo apt install python3-sympy
+sudo dnf install python3-sympy
+sudo pacman -S python-sympy
+        </pre>
 
         <h2>Key Features</h2>
         <ul>
@@ -85,7 +89,7 @@
 from sympy import symbols, sin, cos
 from sympy.plotting import plot
 x = symbols('x')
-plot(sin(x), cos(x))
+plot(sin(x), cos(x), (x, -10, 10), show=True, legend=True)
         </pre>
         <img src="Screenshot 2025-02-25 170033.png" alt="Basic 2D Plot">
 
