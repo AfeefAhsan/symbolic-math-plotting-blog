@@ -5,44 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Symbolic Mathematics Plotting Library</title>
     <style>
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2, h3 {
+            padding: 0;
+            background-color: #f9f9f9;
             color: #333;
+            line-height: 1.6;
         }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #3498db;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
         pre {
-            background: #eee;
-            padding: 10px;
-            border-radius: 5px;
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
             overflow-x: auto;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
         }
+
         img {
             display: block;
             max-width: 100%;
             height: auto;
-            margin: 10px 0;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        ul {
-            padding-left: 20px;
-        }
+
         a {
-            color: #007BFF;
+            color: #3498db;
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            h3 {
+                font-size: 1.25rem;
+            }
+
+            .container {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -116,7 +180,7 @@ from sympy.plotting import plot
 x = symbols('x')
 p = plot(sin(x), cos(x), (x, -10, 10), show=True, legend=True)
         </pre>
-        <img src="media/image1.png" alt="Basic 2D Plot">
+        <img src="Screenshot 2025-02-25 170033.png" alt="Basic 2D Plot">
 
         <h3>Implicit Function Plot</h3>
         <pre>
@@ -127,7 +191,7 @@ x, y = symbols('x y')
 expr = Eq(x**2 + y**2, 4)  # Circle equation
 plot_implicit(expr)
         </pre>
-        <img src="media/image2.png" alt="Implicit Function Plot">
+        <img src="Screenshot 2025-02-25 170301.png" alt="Implicit Function Plot">
 
         <h3>3D Surface Plot</h3>
         <pre>
@@ -135,7 +199,7 @@ from sympy.plotting import plot3d
 
 plot3d(sin(x) * cos(y), (x, -5, 5), (y, -5, 5))
         </pre>
-        <img src="media/image3.png" alt="3D Surface Plot">
+        <img src="Screenshot 2025-02-25 170418.png" alt="3D Surface Plot">
 
         <h2>Use Cases</h2>
         <ul>
